@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Document</title>
+    <style>
+        .box{margin:10px 20px; font-size:40px; border-radius: 25px;}
+    </style>
+</head>
+<body>
+    <input type="file" accept="image/*" capture="camera" id="camera" value="카메라">
+    <img src="" alt="" id="frame">
+
+    <!-- 전화 거는것은 Symbian, 안드로이드만 가능 -->
+    <!-- <a href="wtai://wp/mc; 01046141099">아이폰 안됨 전화걸기</a> -->
+    <!-- Symbian, Android 및 iPhone 지원됨 -->
+    <!-- <a href="tel://010">아이폰 지원 가능 전화걸기</a> -->
+    <!-- 전화번호 저장//아이폰 확인 불가능 
+        wtai://wp/ap;number;name
+    wtai://wp/mc; – Dial number
+    wtai://wp/ap; – Put number in your contacts list
+    wtai://wp/sd; – Send DTMF sequence trough voice ca-->
+    <a href="wtai://wp/mc/+01046141099;dahyun">전화번호 저장1</a>
+    <a href="wtai://wp/ap;01046141099,1111;ko dahyun">전화번호 저장2</a>
+    <script>
+        var camera = document.getElementById('camera');
+        var frame = document.getElementById('frame');
+
+        camera.addEventListener('change',function(e){
+            var file=e.target.files[0];
+            frame.src = URL.createObjectURL(file);
+        });
+    </script>
+
+<!-- https://yg-dad.tistory.com/164 -->
+</body>
+</html>
